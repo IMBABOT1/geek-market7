@@ -49,20 +49,5 @@ public class RestProductController {
         productService.deleteById(id);
     }
 
-//    @GetMapping
-//    public String showAllProducts(Model model,
-//                                  @RequestParam(defaultValue = "1", name = "p") Integer page,
-//                                  @RequestParam(name = "title") String title,
-//                                  @RequestParam(name = "price") Integer price;
-//    ) {
-//        if (page < 1) {
-//            page = 1;
-//        }
-//
-//        Page<Product> products = productService.findAll(productFilter.getSpec(), page - 1, 5);
-//        model.addAttribute("products", products);
-//        model.addAttribute("filterDefinition", productFilter.getFilterDefinition());
-//        return "products";
-//    }
 
 }

@@ -8,7 +8,11 @@ public class ProductSpecifications {
         return (Specification<Product>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.greaterThanOrEqualTo(root.get("price"), price);  // where p.price >= minPrice
     }
 
-    public static Specification<Product> priceLesserOrEqualsThan(String title) {
-        return (Specification<Product>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.like(root.get("title"), title); // where p.price <= maxPrice
+    public static Specification<Product> priceLesserOrEqualsThan(int price) {
+        return (Specification<Product>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.lessThanOrEqualTo(root.get("price"), price); // where p.price <= maxPrice
+    }
+
+    public static Specification<Product> titleLike(String title) {
+        return (Specification<Product>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.like(root.get("title"), String.format("%%%s%%")); // where p.price <= maxPrice
     }
 }

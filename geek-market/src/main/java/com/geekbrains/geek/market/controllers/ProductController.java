@@ -25,7 +25,7 @@ public class ProductController {
     public String showAllProducts(Model model,
                                   @RequestParam(defaultValue = "1", name = "p") Integer page,
                                   @RequestParam Map<String, String> params
-                                  ) {
+    ) {
         if (page < 1) {
             page = 1;
         }
