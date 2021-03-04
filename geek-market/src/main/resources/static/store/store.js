@@ -9,15 +9,15 @@ angular.module('app').controller('storeController', function ($scope, $http) {
             });
     };
 
-    $scope.applyFilter = function () {
-        $http({
-            url: contextPath + '/api/v1/books',
-            method: "GET",
-            params: {obj_title: $scope.obj.title, obj_price: $scope.obj.price}
-        }).then(function (response) {
-            ...
-        });
-    }
+    // $scope.applyFilter = function () {
+    //     $http({
+    //         url: contextPath + '/api/v1/books',
+    //         method: "GET",
+    //         params: {obj_title: $scope.obj.title, obj_price: $scope.obj.price}
+    //     }).then(function (response) {
+    //         ...
+    //     });
+    // }
 
     $scope.submitCreateNewProduct = function () {
         $http.post(contextPath + '/api/v1/products', $scope.newProduct)

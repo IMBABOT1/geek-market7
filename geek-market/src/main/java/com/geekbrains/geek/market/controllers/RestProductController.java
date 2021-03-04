@@ -2,11 +2,15 @@ package com.geekbrains.geek.market.controllers;
 
 import com.geekbrains.geek.market.entities.Product;
 import com.geekbrains.geek.market.services.ProductService;
+import com.geekbrains.geek.market.utils.ProductFilter;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/products")
@@ -45,14 +49,20 @@ public class RestProductController {
         productService.deleteById(id);
     }
 
-    @GetMapping()
-    public void findProduct(@RequestParam(name = "title", required = false) String title,
-                            @RequestParam(name = "price", required = false) Integer price
-    ){
-
-
-
-    }
-
+//    @GetMapping
+//    public String showAllProducts(Model model,
+//                                  @RequestParam(defaultValue = "1", name = "p") Integer page,
+//                                  @RequestParam(name = "title") String title,
+//                                  @RequestParam(name = "price") Integer price;
+//    ) {
+//        if (page < 1) {
+//            page = 1;
+//        }
+//
+//        Page<Product> products = productService.findAll(productFilter.getSpec(), page - 1, 5);
+//        model.addAttribute("products", products);
+//        model.addAttribute("filterDefinition", productFilter.getFilterDefinition());
+//        return "products";
+//    }
 
 }
