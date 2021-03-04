@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class ProductService
+public class ProductService{
     private ProductRepository productRepository;
 
     public Optional<Product> findById(Long id) {
