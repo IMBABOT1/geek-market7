@@ -44,4 +44,15 @@ public class RestProductController {
     public void deleteById(@PathVariable Long id) {
         productService.deleteById(id);
     }
+
+    @GetMapping()
+    public void findProduct(@RequestParam(name = "title", required = false) String title,
+                            @RequestParam(name = "price", required = false) Integer price
+    ){
+
+
+
+    }
+
+
 }
